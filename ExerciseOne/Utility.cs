@@ -47,5 +47,37 @@ namespace ExerciseOne
             Console.WriteLine(message);
             Console.WriteLine(secondMessage);
         }
+
+        /// <summary>
+        /// Displays a rectangle of the given number. Used for exercise thirteen.
+        /// </summary>
+        /// <param name="number"></param>
+        public void DisplayRectangle(int number)
+        {
+            var fullLine = $"{number}{number}{number}";
+
+            //Creates the side block with as many spaces in the middle as there is characters in the number.
+            var amountOfChars = number.ToString().ToCharArray().Length;
+            var side = $"{number}";
+            for (var index = 0; index < amountOfChars; index++)
+            {
+                side += " ";
+            }
+            side += number;
+
+            var rows = 5;
+
+            for (var i = 0; i < rows; i++)
+            {
+                if (i > 0 && i < rows - 1)
+                {
+                    Console.WriteLine(side);
+                }
+                else
+                {
+                    Console.WriteLine(fullLine);
+                }
+            }
+        }
     }
 }

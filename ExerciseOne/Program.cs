@@ -21,7 +21,8 @@ namespace ExerciseOne
             //ExerciseNine();
             //ExerciseTen();
             //ExerciseEleven();
-            ExerciseTwelve();
+            //ExerciseTwelve();
+            ExerciseThirteen();
         }
 
         /// <summary>
@@ -206,6 +207,17 @@ namespace ExerciseOne
 
             utility.DisplayNumberManyTimes(number);
             utility.DisplayNumberManyTimes(number);
+        }
+
+        /// <summary>
+        /// Exercise Thirteen. Display a rectangle.
+        /// </summary>
+        private static void ExerciseThirteen()
+        {
+            Console.WriteLine("Exercise Thirteen!");
+            Console.WriteLine("Please enter a number:");
+            utility.PromptNumber(out int number);
+            utility.DisplayRectangle(number);
         }
     }
 }
