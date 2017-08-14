@@ -25,7 +25,11 @@ namespace ExerciseOne
             //ExerciseThirteen();
             //ExerciseFourteen();
             //ExerciseFifteen();
-            ExerciseSixteen();
+            //ExerciseSixteen();
+            //ExerciseSeventeen();
+            //ExerciseEighteen();
+            //ExerciseNineteen();
+            ExerciseTwenty();
         }
 
         /// <summary>
@@ -276,6 +280,73 @@ namespace ExerciseOne
             Console.WriteLine($"Your new word is '{newWord}'.");
         }
 
-        
+        /// <summary>
+        /// Exercise Seventeen. Add the first character at the beginning and end of a string.
+        /// </summary>
+        private static void ExerciseSeventeen()
+        {
+            Console.WriteLine("Exercise Seventeen!");
+            Console.WriteLine("Please enter some text:");
+            var input = utility.PromptText();
+            var firstLetter = input.ToCharArray()[0];
+
+            var formattedString = firstLetter + input + firstLetter;
+            Console.WriteLine($"Your new text is '{formattedString}'.");
+        }
+
+        /// <summary>
+        /// Exercise Eighteen. Check if one number is positive and the other negative.
+        /// </summary>
+        private static void ExerciseEighteen()
+        {
+            Console.WriteLine("Exercise Eighteen!");
+            utility.PromptTwoNumbers(out int firstNumber, out int secondNumber);
+
+            var isOnePositiveOneNegative = utility.OnePositiveOneNegative(firstNumber, secondNumber);
+
+            Console.WriteLine($"The statment: 'One number is positive. The other is negative' is {isOnePositiveOneNegative}.");
+        }
+
+        /// <summary>
+        /// Exercise Nineteen. Triple sum.
+        /// </summary>
+        private static void ExerciseNineteen()
+        {
+            Console.WriteLine("Exercise Nineteen!");
+            utility.PromptTwoNumbers(out int firstNumber, out int secondNumber);
+
+            var sum = firstNumber + secondNumber;
+
+            if (firstNumber == secondNumber)
+            {
+                sum *= 3;
+                Console.WriteLine($"Since {firstNumber} and {secondNumber} are the same number you get their triple sum: {sum}.");
+                return;
+            }
+
+            Console.WriteLine($"The sum of {firstNumber} and {secondNumber} is {sum}.");
+        }
+
+        /// <summary>
+        /// Exercise Twenty. Absolute value.
+        /// </summary>
+        private static void ExerciseTwenty()
+        {
+            Console.WriteLine("Exercise Twenty!");
+            utility.PromptTwoNumbers(out int firstNumber, out int secondNumber);
+
+            var absoluteValue = (secondNumber < 0)
+                ? Math.Abs(firstNumber + secondNumber)
+                : Math.Abs(firstNumber - secondNumber);
+
+            if (firstNumber > secondNumber)
+            {
+                absoluteValue *= 2;
+                Console.WriteLine($"{firstNumber} is bigger than {secondNumber} so you get the double absolute value: {absoluteValue}.");
+                return;
+            }
+
+            Console.WriteLine($"The absolute of the difference between {firstNumber} and {secondNumber} is {absoluteValue}.");
+        }
     }
 }

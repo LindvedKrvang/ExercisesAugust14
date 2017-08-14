@@ -95,5 +95,16 @@ namespace ExerciseOne
             }
             return text;
         }
+
+        /// <summary>
+        /// Returns true if one number is positive and the other is negative. Used for exercise Eighteen.
+        /// </summary>
+        /// <param name="firstNumber"></param>
+        /// <param name="secondNumber"></param>
+        /// <returns></returns>
+        public bool OnePositiveOneNegative(int firstNumber, int secondNumber)
+        {
+            return firstNumber < 0 && secondNumber > 0 || firstNumber > 0 && secondNumber < 0;
+        }
     }
 }
