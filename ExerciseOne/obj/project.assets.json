@@ -7042,9 +7042,9 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Rasmus\\Documents\\EASV\\3.semester\\SCO\\C#_CrashCourse\\ExercisesAugust14\\ExerciseOne\\ExerciseOne.csproj",
-      "projectName": "ExerciseOne",
-      "projectPath": "C:\\Users\\Rasmus\\Documents\\EASV\\3.semester\\SCO\\C#_CrashCourse\\ExercisesAugust14\\ExerciseOne\\ExerciseOne.csproj",
+      "projectUniqueName": "C:\\Users\\Rasmus\\Documents\\EASV\\3.semester\\SCO\\C#_CrashCourse\\ExercisesAugust14\\ExerciseOne\\August14.csproj",
+      "projectName": "August14",
+      "projectPath": "C:\\Users\\Rasmus\\Documents\\EASV\\3.semester\\SCO\\C#_CrashCourse\\ExercisesAugust14\\ExerciseOne\\August14.csproj",
       "outputPath": "C:\\Users\\Rasmus\\Documents\\EASV\\3.semester\\SCO\\C#_CrashCourse\\ExercisesAugust14\\ExerciseOne\\obj\\",
       "projectStyle": "PackageReference",
       "originalTargetFrameworks": [
