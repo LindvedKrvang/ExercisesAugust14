@@ -1,24 +1,34 @@
 ﻿using System;
+using System.Runtime.InteropServices.ComTypes;
 
 namespace ExerciseOne
 {
     class Program
     {
+        private static Utility utility;
+
         static void Main(string[] args)
         {
+            utility = new Utility();
             //ExerciseOne();
             //ExerciseTwo();
             //ExerciseThree();
             //ExerciseFour();
             //ExerciseFive();
             //ExerciseSix();
-            ExerciseSeven();
+            //ExerciseSeven();
+            //ExerciseEigth();
+            //ExerciseNine();
+            //ExerciseTen();
+            //ExerciseEleven();
+            ExerciseTwelve();
         }
 
         /// <summary>
         /// Exercise 1. Prompt name.
         /// </summary>
-        private static void ExerciseOne() {
+        private static void ExerciseOne()
+        {
             Console.WriteLine("Exercise One!");
             Console.WriteLine("Please enter your name:");
             var input = Console.ReadLine();
@@ -28,46 +38,26 @@ namespace ExerciseOne
         /// <summary>
         /// Exercise 2. Add two numbers.
         /// </summary>
-        private static void ExerciseTwo() {
+        private static void ExerciseTwo()
+        {
             Console.WriteLine("Exercise Two!");
-            PromptTwoNumbers(out int firstNumber, out int secondNumber);
+            utility.PromptTwoNumbers(out int firstNumber, out int secondNumber);
 
             var sum = firstNumber + secondNumber;
             Console.WriteLine($"The sum of {firstNumber} and {secondNumber} is {sum}.");
         }
 
         /// <summary>
-        /// Prompts for two numbers and returns them.
-        /// </summary>
-        /// <param name="firstNumber"></param>
-        /// <param name="secondNumber"></param>
-        private static void PromptTwoNumbers(out int firstNumber, out int secondNumber) {
-            Console.WriteLine("Please enter a number:");
-            PromptNumber(out firstNumber);
-            Console.WriteLine("Please enter a second number:");
-            PromptNumber(out secondNumber);
-        }
-
-        /// <summary>
-        /// Prompts for a number. If it's not a valid number. Prompts for a new one.
-        /// </summary>
-        /// <param name="number"></param>
-        private static void PromptNumber(out int number) {
-            if(!int.TryParse(Console.ReadLine(), out number)) {
-                Console.WriteLine("That's not a valid number. Try again.");
-                PromptNumber(out number);
-            }
-        }
-
-        /// <summary>
         /// Exercise Three. Divide two numbers.
         /// </summary>
-        private static void ExerciseThree() {
+        private static void ExerciseThree()
+        {
             Console.WriteLine("Exercise Three!");
-            PromptTwoNumbers(out int firstNumber, out int secondNumber);
-            if(secondNumber < 1) {
+            utility.PromptTwoNumbers(out int firstNumber, out int secondNumber);
+            if (secondNumber < 1)
+            {
                 Console.WriteLine($"You can't divided with {secondNumber}! \nEnter a new number:");
-                PromptNumber(out secondNumber);
+                utility.PromptNumber(out secondNumber);
             }
 
             float dividedNumber = firstNumber / secondNumber;
@@ -77,7 +67,8 @@ namespace ExerciseOne
         /// <summary>
         /// Exercise Four. Do the four alogrithms.
         /// </summary>
-        private static void ExerciseFour() {
+        private static void ExerciseFour()
+        {
             Console.WriteLine("Exercise Four!");
             var firstAlgorithm = -1 + 4 * 6;
             var secondAlgorithm = (35 + 5) / 7;
@@ -90,9 +81,10 @@ namespace ExerciseOne
         /// <summary>
         /// Exerise Five. Swap two numbers.
         /// </summary>
-        private static void ExerciseFive() {
+        private static void ExerciseFive()
+        {
             Console.WriteLine("Exercise Five!");
-            PromptTwoNumbers(out int firstNumber, out int secondNumber);
+            utility.PromptTwoNumbers(out int firstNumber, out int secondNumber);
 
             var temp = firstNumber;
             firstNumber = secondNumber;
@@ -104,18 +96,116 @@ namespace ExerciseOne
         /// <summary>
         /// Exercise Six. Multiply three numbers.
         /// </summary>
-        private static void ExerciseSix() {
+        private static void ExerciseSix()
+        {
             Console.WriteLine("Exercise Six!");
-            PromptTwoNumbers(out int firstNumber, out int secondNumber);
+            utility.PromptTwoNumbers(out int firstNumber, out int secondNumber);
             Console.WriteLine("Enter a third number:");
-            PromptNumber(out int thirdNumber);
+            utility.PromptNumber(out int thirdNumber);
 
             var multipliedNumber = firstNumber * secondNumber * thirdNumber;
-            Console.WriteLine($"{firstNumber}, {secondNumber} and {thirdNumber} multiplied together is {multipliedNumber}.");
+            Console.WriteLine(
+                $"{firstNumber}, {secondNumber} and {thirdNumber} multiplied together is {multipliedNumber}.");
         }
 
-        private static void ExerciseSeven() {
+        /// <summary>
+        /// Exercise 7. Add. Multiply. Divide. Modulus.
+        /// </summary>
+        private static void ExerciseSeven()
+        {
+            Console.WriteLine("Exercise Seven!");
+            utility.PromptTwoNumbers(out int firstNumber, out int secondNumber);
 
+            //Checks if the second number is not zero or a negative number.
+            if (secondNumber < 1) {
+                Console.WriteLine($"You can't divided with {secondNumber}! \nEnter a new number:");
+                utility.PromptNumber(out secondNumber);
+            }
+
+            var sum = firstNumber + secondNumber;
+            var multiplied = firstNumber * secondNumber;
+            var divided = firstNumber / secondNumber;
+            var modulus = firstNumber % secondNumber;
+
+            Console.WriteLine($"Your numbers are {firstNumber} and {secondNumber}.");
+            Console.WriteLine($"The sum is: {sum}.");
+            Console.WriteLine($"The multiplied number is: {multiplied}.");
+            Console.WriteLine($"The divided number is: {divided}.");
+            Console.WriteLine($"The modilus is: {modulus}.");
+        }
+
+        /// <summary>
+        /// Exercise Eigth. Choose a multiplier and multiply.
+        /// </summary>
+        private static void ExerciseEigth()
+        {
+            Console.WriteLine("Exercise Eigth!");
+            Console.WriteLine("Enter a number:");
+            utility.PromptNumber(out int multiplier);
+
+            var amountOfTurns = 10;
+            for (int i = 0; i <= amountOfTurns; i++)
+            {
+                var multipliedNumber = multiplier * i;
+                Console.WriteLine($"{multiplier} * {i} = {multipliedNumber}.");
+            }
+        }
+
+        /// <summary>
+        /// Exercise Nine. Average of four numbers.
+        /// </summary>
+        private static void ExerciseNine()
+        {
+            Console.WriteLine("Exerise Nine!");
+            utility.PromptTwoNumbers(out int firstNumber, out int secondNumber);
+            utility.PromptTwoNumbers(out int thirdNumber, out int fourthNumber);
+
+            var amountOfNumbers = 4;
+            var averageNumber = (firstNumber + secondNumber + thirdNumber + fourthNumber) / amountOfNumbers;
+
+            Console.WriteLine($"The average number of {firstNumber}, {secondNumber}, {thirdNumber} and {fourthNumber} is {averageNumber}.");
+        }
+
+        /// <summary>
+        /// Exerise Ten. Three inputs with specified result.
+        /// </summary>
+        private static void ExerciseTen()
+        {
+            Console.WriteLine("Exercise Ten!");
+            utility.PromptTwoNumbers(out int firstNumber, out int secondNumber);
+            Console.WriteLine("Please enter a third number:");
+            utility.PromptNumber(out int thirdNumber);
+
+            var firstOutput = (firstNumber + secondNumber) * thirdNumber;
+            var secondOutput = firstNumber * secondNumber + secondNumber * thirdNumber;
+
+            Console.WriteLine($"Result of specified numbers {firstNumber}, {secondNumber} and {thirdNumber} " +
+                              $"(x+y)*z is {firstOutput} and (x*y)+(y*z) is {secondOutput}.");
+        }
+
+        /// <summary>
+        /// Exercise Eleven. Ask for your age and show it.
+        /// </summary>
+        private static void ExerciseEleven()
+        {
+            Console.WriteLine("Exercise Eleven");
+            Console.WriteLine("Please enter your age:");
+            utility.PromptNumber(out int age);
+
+            Console.WriteLine($"You look older than {age}.");
+        }
+
+        /// <summary>
+        /// Exercise Twelve. Print a number many times.
+        /// </summary>
+        private static void ExerciseTwelve()
+        {
+            Console.WriteLine("Exercise Twelve!");
+            Console.WriteLine("Please enter a number: ");
+            utility.PromptNumber(out int number);
+
+            utility.DisplayNumberManyTimes(number);
+            utility.DisplayNumberManyTimes(number);
         }
     }
 }
