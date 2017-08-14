@@ -79,5 +79,21 @@ namespace ExerciseOne
                 }
             }
         }
+
+        /// <summary>
+        /// Prompts the user for some text and returns it.
+        /// Makes sure that the text is not empty or null.
+        /// This method does NOT tell the user to write some text.
+        /// </summary>
+        /// <returns></returns>
+        public string PromptText()
+        {
+            var text = Console.ReadLine();
+            while (text == null || text.Equals("")) {
+                Console.WriteLine("That's not usefull for me. Please enter something else:");
+                text = Console.ReadLine();
+            }
+            return text;
+        }
     }
 }

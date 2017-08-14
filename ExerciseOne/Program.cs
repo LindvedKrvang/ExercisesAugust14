@@ -22,7 +22,10 @@ namespace ExerciseOne
             //ExerciseTen();
             //ExerciseEleven();
             //ExerciseTwelve();
-            ExerciseThirteen();
+            //ExerciseThirteen();
+            //ExerciseFourteen();
+            //ExerciseFifteen();
+            ExerciseSixteen();
         }
 
         /// <summary>
@@ -219,5 +222,60 @@ namespace ExerciseOne
             utility.PromptNumber(out int number);
             utility.DisplayRectangle(number);
         }
+
+        /// <summary>
+        /// Exercise Fourteen. Convert temperatures.
+        /// </summary>
+        private static void ExerciseFourteen()
+        {
+            Console.WriteLine("Exercise Fourteen!");
+            Console.WriteLine("Please enter a temperature in Celsius:");
+            utility.PromptNumber(out int temperature);
+
+            var kelvin = temperature + 273.15;
+            var fahrenheit = ((temperature * 9) / 5) + 32;
+
+            Console.WriteLine($"Kelvin: {kelvin}\nFahrenheit: {fahrenheit}");
+        }
+
+        /// <summary>
+        /// Exercise Fifteen. Remove a character from a word.
+        /// </summary>
+        private static void ExerciseFifteen()
+        {
+            Console.WriteLine("Exercise Fifteen!");
+            Console.WriteLine("Please enter a word:");
+            var input = utility.PromptText();
+
+            Console.WriteLine("Now please enter a character to be removed:");
+            var toRemove = utility.PromptText();
+
+            Console.WriteLine($"Your word is '{input}' and the character to be removed is '{toRemove}'.");
+
+            var alteredInput = input.Replace(toRemove, "");
+
+            Console.WriteLine($"Your new word is '{alteredInput}'.");
+        }
+
+        /// <summary>
+        /// Exercise Sixteen. Switch first and last character of a string.
+        /// </summary>
+        private static void ExerciseSixteen()
+        {
+            Console.WriteLine("Exercise Sixteen!");
+            Console.WriteLine("Please enter a word:");
+            var input = utility.PromptText().ToCharArray();
+
+            var lastIndex = input.Length - 1;
+            var firstLetter = input[0];
+            var lastLetter = input[lastIndex];
+            input[0] = lastLetter;
+            input[lastIndex] = firstLetter;
+
+            var newWord = new string(input);
+            Console.WriteLine($"Your new word is '{newWord}'.");
+        }
+
+        
     }
 }
