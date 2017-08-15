@@ -7042,10 +7042,10 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Rasmus\\Documents\\EASV\\3.semester\\SCO\\C#_CrashCourse\\ExercisesAugust14\\ExerciseOne\\August14.csproj",
+      "projectUniqueName": "C:\\Users\\Rasmus\\Documents\\EASV\\3.semester\\SCO\\C#_CrashCourse\\Exercises\\ExerciseOne\\August14.csproj",
       "projectName": "August14",
-      "projectPath": "C:\\Users\\Rasmus\\Documents\\EASV\\3.semester\\SCO\\C#_CrashCourse\\ExercisesAugust14\\ExerciseOne\\August14.csproj",
-      "outputPath": "C:\\Users\\Rasmus\\Documents\\EASV\\3.semester\\SCO\\C#_CrashCourse\\ExercisesAugust14\\ExerciseOne\\obj\\",
+      "projectPath": "C:\\Users\\Rasmus\\Documents\\EASV\\3.semester\\SCO\\C#_CrashCourse\\Exercises\\ExerciseOne\\August14.csproj",
+      "outputPath": "C:\\Users\\Rasmus\\Documents\\EASV\\3.semester\\SCO\\C#_CrashCourse\\Exercises\\ExerciseOne\\obj\\",
       "projectStyle": "PackageReference",
       "originalTargetFrameworks": [
         "netcoreapp1.1"
