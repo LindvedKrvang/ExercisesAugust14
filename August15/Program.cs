@@ -59,7 +59,7 @@ namespace August15 {
             Console.WriteLine("Exercise Sixteen!");
             Console.WriteLine("Please enter a letter:");
             var letter = utility.PromptLetter();
-            bool isVowel = utility.CheckIsVowel(letter);
+            var isVowel = utility.CheckIsVowel(letter);
             if (isVowel)
             {
                 Console.WriteLine($"The letter '{letter}' is a vowel.");
