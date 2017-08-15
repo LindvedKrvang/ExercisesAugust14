@@ -1,4 +1,5 @@
 using System;
+using System.Text.RegularExpressions;
 
 namespace August15
 {
@@ -43,6 +44,33 @@ namespace August15
             PromptNumbers(out firstNumber, out secondNumber);
             Console.WriteLine("Please enter a third number;");
             thirdNumber = PromptNumber();
+        }
+
+        /// <summary>
+        /// Prompt the user for a letter. Validates and returns it.
+        /// </summary>
+        /// <returns></returns>
+        public string PromptLetter()
+        {
+            var input = Console.ReadLine();
+            var regex = new Regex("[a-zA-Z]");
+            if(string.IsNullOrWhiteSpace(input) || input.ToCharArray().Length > 1 || !regex.IsMatch(input))
+            {
+                Console.WriteLine("I can't use that. Try again:");
+                input = PromptLetter();
+            }
+            return input;
+        }
+
+        /// <summary>
+        /// Checks if the given string is a vowel.
+        /// </summary>
+        /// <param name="letter"></param>
+        /// <returns></returns>
+        public bool CheckIsVowel(string letter)
+        {
+            var regexVowel = new Regex("[aeyuio]");
+            return regexVowel.IsMatch(letter);
         }
 
         /// <summary>

@@ -12,7 +12,8 @@ namespace August15 {
             utility = new Utility();
             //ExerciseEigth();
             //ExerciseNineEnumSolution();
-            ExerciseNineStructSolution();
+            //ExerciseNineStructSolution();
+            ExerciseSixteen();
         }
 
         /// <summary>
@@ -36,35 +37,7 @@ namespace August15 {
             Console.WriteLine("Exercise Nine Enum Solution!");
             utility.PromptNumbers(out int firstNumber, out int secondNumber);
             EnumQuadrants enumQuadrant = utility.FindQuadrant(firstNumber, secondNumber);
-
-            switch (enumQuadrant)
-            {
-                case EnumQuadrants.FirstQuadrant:
-                {
-                    utility.WriteQuadrantMessage(firstNumber, secondNumber, enumQuadrant);
-                    break;
-                }
-                case EnumQuadrants.SecondQuadrant:
-                {
-                    utility.WriteQuadrantMessage(firstNumber, secondNumber, enumQuadrant);
-                    break; 
-                }
-                case EnumQuadrants.ThirdQuadrant:
-                {
-                    utility.WriteQuadrantMessage(firstNumber, secondNumber, enumQuadrant);
-                    break;
-                }
-                case EnumQuadrants.FourthQuadrant:
-                {
-                    utility.WriteQuadrantMessage(firstNumber, secondNumber, enumQuadrant);
-                    break;
-                }
-                case EnumQuadrants.Oregon:
-                {
-                    utility.WriteQuadrantMessage(firstNumber, secondNumber, enumQuadrant);
-                    break;
-                }
-            }
+            utility.WriteQuadrantMessage(firstNumber, secondNumber, enumQuadrant);
         }
 
         /// <summary>
@@ -75,34 +48,25 @@ namespace August15 {
             Console.WriteLine("Exercise Nine Struct Solution!");
             utility.PromptNumbers(out int firstNumber, out int secondNumber);
             QuadrantsStruct quadrant = utility.FindQuadrantStruct(firstNumber, secondNumber);
+            utility.WriteQuadrantMessage(firstNumber, secondNumber, quadrant);
+        }
 
-            switch (quadrant.quadrant)
+        /// <summary>
+        /// Exercise Sixteen. Check if a letter is a vowel or not.
+        /// </summary>
+        private static void ExerciseSixteen()
+        {
+            Console.WriteLine("Exercise Sixteen!");
+            Console.WriteLine("Please enter a letter:");
+            var letter = utility.PromptLetter();
+            bool isVowel = utility.CheckIsVowel(letter);
+            if (isVowel)
             {
-                case Constants.FIRST_QUADRANT:
-                {
-                    utility.WriteQuadrantMessage(firstNumber, secondNumber, quadrant);
-                    break;
-                }
-                case Constants.SECOND_QUADRANT:
-                {
-                    utility.WriteQuadrantMessage(firstNumber, secondNumber, quadrant);
-                    break;
-                }
-                case Constants.THIRD_QUADRANT:
-                {
-                    utility.WriteQuadrantMessage(firstNumber, secondNumber, quadrant);
-                    break;
-                }
-                case Constants.FOURTH_QUARDANT:
-                {
-                    utility.WriteQuadrantMessage(firstNumber, secondNumber, quadrant);
-                    break;
-                }
-                case Constants.OREGON:
-                {
-                    utility.WriteQuadrantMessage(firstNumber, secondNumber, quadrant);
-                    break;
-                }
+                Console.WriteLine($"The letter '{letter}' is a vowel.");
+            }
+            else
+            {
+                Console.WriteLine($"The letter '{letter}' is not a vowel.");
             }
         }
     }
