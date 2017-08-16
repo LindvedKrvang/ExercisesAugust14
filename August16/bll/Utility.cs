@@ -1,5 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
+using System.Linq;
 using System.Text;
 
 namespace August16.bll
@@ -76,25 +78,57 @@ namespace August16.bll
         /// </summary>
         /// <param name="list"></param>
         /// <returns></returns>
-        public HashSet<int> GetUniqueElementsInAList(List<int> list)
+        public List<int> GetUniqueElementsInAList(List<int> list)
         {
-            var set = new HashSet<int>();
-            var duplicates = new HashSet<int>();
+
+            List<int> uniqueNumbers = list.GroupBy(i => i)
+                .Where(g => g.Count() == 1)
+                .Select(g => g.Key)
+                .ToList();
+            return uniqueNumbers;
+        }
+
+        /// <summary>
+        /// Recieves X lists, adds them, sorts them and returns them.
+        /// </summary>
+        /// <param name="lists"></param>
+        /// <returns></returns>
+        public List<int> MergeAndSortList(params List<int>[] lists)
+        {
+            if(lists == null) { throw new NullReferenceException("There needs to be something parsed!");}
+
+            var list = new List<int>();
+            foreach (var item in lists)
+            {
+                list.AddRange(item);
+            }
+            list.Sort();
+            return list;
+        }
+
+        /// <summary>
+        /// Takes a List of Integers and find the frequency of each Integer.
+        /// Returns them in a Dictionary.
+        /// </summary>
+        /// <param name="list"></param>
+        /// <returns></returns>
+        public Dictionary<int, int> GetFrequency(List<int> list)
+        {
+            var frequency = new Dictionary<int, int>();
 
             foreach (var item in list)
             {
-                if (!set.Add(item))
+                if (frequency.TryGetValue(item, out int value))
                 {
-                    duplicates.Add(item);
+                    value++;
+                    frequency[item] = value;
+                }
+                else
+                {
+                    frequency[item] = 1;
                 }
             }
-
-            foreach (var duplicate in duplicates)
-            {
-                set.Remove(duplicate);
-            }
-            return set;
+            return frequency;
         }
-        
     }
 }

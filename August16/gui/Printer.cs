@@ -35,5 +35,22 @@ namespace August16.gui
             }
             Console.WriteLine();
         }
+
+        /// <summary>
+        /// Prints the parsed dictionary.
+        /// </summary>
+        /// <typeparam name="T"></typeparam>
+        /// <typeparam name="TK"></typeparam>
+        /// <param name="dictionary"></param>
+        public void PrintDictionary<T, TK>(Dictionary<T, TK> dictionary)
+        {
+            if(dictionary == null) { throw new NullReferenceException("Must not be null");}
+
+            foreach (var key in dictionary.Keys)
+            {
+                dictionary.TryGetValue(key, out TK value);
+                Console.WriteLine($"Key '{key}' has value '{value}'.");
+            }
+        }
     }
 }

@@ -19,7 +19,9 @@ namespace August16
             //ExerciseTwo();
             //ExerciseThree();
             //ExerciseFive();
-            ExerciseSix();
+            //ExerciseSix();
+            //ExerciseSeven();
+            ExerciseEigth();
         }
 
         /// <summary>
@@ -97,7 +99,42 @@ namespace August16
 
             var uniqueNumbers = utility.GetUniqueElementsInAList(numbers);
             Console.WriteLine("The unique numbers are:");
-            printer.PrintSetOfNumbers(uniqueNumbers);
+            printer.PrintListOfNumbers(uniqueNumbers);
+        }
+
+        /// <summary>
+        /// Exercise Seven. Merge two list and sort them.
+        /// </summary>
+        public static void ExerciseSeven()
+        {
+            Console.WriteLine("Exercise Seven!");
+            Console.WriteLine("Please enter how long you want your list to be: ");
+            var lengthOfList = utility.PromptNumber();
+            var firstNumbers = utility.GetListOfNumbers(lengthOfList);
+
+            Console.WriteLine("Please enter the length of the second list:");
+            lengthOfList = utility.PromptNumber();
+            var secondNumbers = utility.GetListOfNumbers(lengthOfList);
+
+            var sortedList = utility.MergeAndSortList(firstNumbers, secondNumbers);
+            Console.WriteLine("Your new list is:");
+            printer.PrintListOfNumbers(sortedList);
+        }
+
+        /// <summary>
+        /// Exercise Eigth. Find the frequency.
+        /// </summary>
+        public static void ExerciseEigth()
+        {
+            Console.WriteLine("Exercise Eigth!");
+            Console.WriteLine("Please enter how long you want your list to be: ");
+            var lengthOfList = utility.PromptNumber();
+            var numbers = utility.GetListOfNumbers(lengthOfList);
+
+            var frequency = utility.GetFrequency(numbers);
+
+            Console.WriteLine("The frequncy is:");
+            printer.PrintDictionary(frequency);
         }
     }
 }
