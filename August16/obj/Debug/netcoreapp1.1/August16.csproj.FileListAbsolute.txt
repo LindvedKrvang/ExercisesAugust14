@@ -1,0 +1,9 @@
+C:\Users\Rasmus\Documents\EASV\3.semester\SCO\C#_CrashCourse\Exercises\August16\bin\Debug\netcoreapp1.1\August16.deps.json
+C:\Users\Rasmus\Documents\EASV\3.semester\SCO\C#_CrashCourse\Exercises\August16\bin\Debug\netcoreapp1.1\August16.runtimeconfig.json
+C:\Users\Rasmus\Documents\EASV\3.semester\SCO\C#_CrashCourse\Exercises\August16\bin\Debug\netcoreapp1.1\August16.runtimeconfig.dev.json
+C:\Users\Rasmus\Documents\EASV\3.semester\SCO\C#_CrashCourse\Exercises\August16\bin\Debug\netcoreapp1.1\August16.dll
+C:\Users\Rasmus\Documents\EASV\3.semester\SCO\C#_CrashCourse\Exercises\August16\bin\Debug\netcoreapp1.1\August16.pdb
+C:\Users\Rasmus\Documents\EASV\3.semester\SCO\C#_CrashCourse\Exercises\August16\obj\Debug\netcoreapp1.1\August16.csprojResolveAssemblyReference.cache
+C:\Users\Rasmus\Documents\EASV\3.semester\SCO\C#_CrashCourse\Exercises\August16\obj\Debug\netcoreapp1.1\August16.AssemblyInfo.cs
+C:\Users\Rasmus\Documents\EASV\3.semester\SCO\C#_CrashCourse\Exercises\August16\obj\Debug\netcoreapp1.1\August16.dll
+C:\Users\Rasmus\Documents\EASV\3.semester\SCO\C#_CrashCourse\Exercises\August16\obj\Debug\netcoreapp1.1\August16.pdb
