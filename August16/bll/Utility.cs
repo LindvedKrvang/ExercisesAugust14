@@ -51,5 +51,50 @@ namespace August16.bll
             return sum;
         }
         
+        /// <summary>
+        /// Recieves a List of Integers and returns a Set of Integers containing all the duplicates.
+        /// </summary>
+        /// <param name="list"></param>
+        /// <returns></returns>
+        public HashSet<int> GetDuplicatesInList(List<int> list)
+        {
+            var set = new HashSet<int>();
+            var duplicates = new HashSet<int>();
+
+            foreach (var item in list)
+            {
+                if (!set.Add(item))
+                {
+                    duplicates.Add(item);
+                }
+            }
+            return duplicates;
+        }
+        
+        /// <summary>
+        /// Recieves a List of Integers and returns a set with all the unique numbers in the list.
+        /// </summary>
+        /// <param name="list"></param>
+        /// <returns></returns>
+        public HashSet<int> GetUniqueElementsInAList(List<int> list)
+        {
+            var set = new HashSet<int>();
+            var duplicates = new HashSet<int>();
+
+            foreach (var item in list)
+            {
+                if (!set.Add(item))
+                {
+                    duplicates.Add(item);
+                }
+            }
+
+            foreach (var duplicate in duplicates)
+            {
+                set.Remove(duplicate);
+            }
+            return set;
+        }
+        
     }
 }

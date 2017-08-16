@@ -17,7 +17,9 @@ namespace August16
             printer = new Printer();
             //ExerciseOne();
             //ExerciseTwo();
-            ExerciseThree();
+            //ExerciseThree();
+            //ExerciseFive();
+            ExerciseSix();
         }
 
         /// <summary>
@@ -68,8 +70,34 @@ namespace August16
             Console.WriteLine($"The sum of the numbers are {sum}.");
         }
 
+        /// <summary>
+        /// Exercise Five. Enter a list and check for duplicates.
+        /// </summary>
         public static void ExerciseFive()
         {
+            Console.WriteLine("Exercise Five!");
+            Console.WriteLine("Please enter how long you want your list to be: ");
+            var lengthOfList = utility.PromptNumber();
+            var numbers = utility.GetListOfNumbers(lengthOfList);
+
+            var duplicates = utility.GetDuplicatesInList(numbers);
+            Console.WriteLine("These numbers were duplicates:");
+            printer.PrintSetOfNumbers(duplicates);
+        }
+
+        /// <summary>
+        /// Exercise Six. Enter a list and find all the unique numbers.
+        /// </summary>
+        public static void ExerciseSix()
+        {
+            Console.WriteLine("Exercise Six!");
+            Console.WriteLine("Please enter how long you want your list to be: ");
+            var lengthOfList = utility.PromptNumber();
+            var numbers = utility.GetListOfNumbers(lengthOfList);
+
+            var uniqueNumbers = utility.GetUniqueElementsInAList(numbers);
+            Console.WriteLine("The unique numbers are:");
+            printer.PrintSetOfNumbers(uniqueNumbers);
         }
     }
 }

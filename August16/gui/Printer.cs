@@ -16,5 +16,24 @@ namespace August16.gui
             }
             Console.WriteLine();
         }
+
+        /// <summary>
+        /// Printes the give HashSet on a single line.
+        /// </summary>
+        /// <param name="set"></param>
+        public void PrintSetOfNumbers(HashSet<int> set)
+        {
+            if (set == null || set.Count == 0)
+            {
+                Console.WriteLine("There is nothing to display!");
+                return;
+            }
+
+            foreach (var item in set)
+            {
+                Console.Write($"{item}, ");
+            }
+            Console.WriteLine();
+        }
     }
 }
